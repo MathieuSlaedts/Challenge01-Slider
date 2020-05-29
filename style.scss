@@ -1,0 +1,140 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: 1.6rem;
+ }
+
+ h1 {
+     color: #666;
+     text-align: center;
+     margin:0;
+     padding: 3rem 0;
+     font-size: 2.5rem;
+ }
+
+.carousel-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+
+    ul, li {
+        display: block;
+        margin: 0; padding: 0;
+    }
+
+    .carousel-wrapper {
+        width: 100%;
+        padding-top: 56.25%;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+
+        .carousel-item {
+            width: 100%;
+            position: absolute;
+            top: -100%;
+            left: 0;
+            z-index: -1;
+            opacity: 0;
+
+            figure {
+                margin: 0;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+
+                figcaption {
+                    position: absolute;
+                    bottom: 0;
+                    padding: 2rem;
+                    width: 100%;
+                    text-align: center;
+                    color: white;
+                    background-color: rgba(0,0,0,0.4);
+                }
+            }
+        }
+        .carousel-item-active,
+        .carousel-item-prev,
+        .carousel-item-next {
+            top: 0;
+            left: 0;
+            opacity: 1;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .carousel-item-active {
+            transform: translateX(0%);
+            z-index: 100;
+        }
+        
+        .carousel-item-prev {
+            transform: translateX(-100%);
+            z-index: 50;
+        }
+        
+        .carousel-item-next {
+            transform: translateX(100%);
+            z-index: 50;
+        }
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        height: 6rem;
+        width: 6rem;
+        position: absolute;
+        top: 50%;
+        margin-top: -2.5rem;
+        z-index: 200;
+        cursor: pointer;
+        border-radius: 3rem;
+        background-color: rgba(0,0,0,0.4);
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .carousel-arrow {
+            display: block;
+            border: solid white;
+            border-width: 0 0.3rem 0.3rem 0;
+            padding: 0.7rem;
+            position: absolute;
+            top: 50%;
+            margin-top: -0.9rem;
+        }
+          
+        .carousel-arrow-left {
+            left: 50%;
+            margin-left: -0.7rem;
+            transform: rotate(135deg);
+        }
+          
+        .carousel-arrow-right {
+            right: 50%;
+            margin-right: -0.7rem;
+            transform: rotate(-45deg);
+        }
+    }
+
+    .carousel-control-prev {
+        left: 2rem;
+    }
+    
+    .carousel-control-next {
+        right: 2rem;
+    }
+
+    .carousel-control-disabled {
+        opacity: 0.2;
+    }
+}
